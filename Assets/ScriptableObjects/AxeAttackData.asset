@@ -18,10 +18,10 @@ MonoBehaviour:
     maxDamage: 80
     attackDuration: 2
     animationName: Attack
-    soundName: 
+    soundName: Cristal
   - attackName: Leaf
     minDamage: 20
     maxDamage: 40
     attackDuration: 2
     animationName: Attack
-    soundName: 
+    soundName: LeafAttack
