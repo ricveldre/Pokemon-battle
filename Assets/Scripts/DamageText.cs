@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.UI;
 
 public class DamageText : MonoBehaviour
@@ -7,14 +8,27 @@ public class DamageText : MonoBehaviour
     private Animator _textAnimator;
     [SerializeField]
     private string _animationName;
+    [SerializeField]
     private Text _text;
     private void Awake()
     {
-        _text = GetComponent<Text>();
+        _text.text = string.Empty;
     }
-    public void ShowDamage(float damage)
+    public void ShowDamage(DamageTarget damageTarget)
     {
-        _text.text = damage.ToString("f0");
+        _text.text = damageTarget.damage.ToString("F0");
+        transform.position = Camera.main.WorldToScreenPoint(damageTarget.target.position);
         _textAnimator.Play(_animationName);
+    }
+}
+[System.Serializable]
+public class DamageTarget
+{
+    public Transform target;
+    public float damage;
+    public void SetDamageTarget(Transform target, float damage)
+    {
+    this.target = target;
+    this.damage = damage;
     }
 }

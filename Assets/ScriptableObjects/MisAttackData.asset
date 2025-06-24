@@ -19,9 +19,17 @@ MonoBehaviour:
     attackDuration: 2
     animationName: Attack
     soundName: DarkMagic1
+    particlesPrefab: {fileID: 3280519133390621005, guid: a71be3e7990efb040a07565c43cbb198,
+      type: 3}
+    hitParticlesPrefab: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7,
+      type: 3}
   - attackName: Confusion
     minDamage: 20
     maxDamage: 40
     attackDuration: 2
     animationName: Attack
     soundName: DarkMagic2
+    particlesPrefab: {fileID: 5824670795371433373, guid: f6fd568b816c64943a44efc3add3a881,
+      type: 3}
+    hitParticlesPrefab: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7,
+      type: 3}

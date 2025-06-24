@@ -19,9 +19,15 @@ MonoBehaviour:
     attackDuration: 2
     animationName: Attack
     soundName: Cristal
+    particlesPrefab: {fileID: 6294508013172393196, guid: 043176b6a68be2b43b073aaaa4782c7d,
+      type: 3}
+    hitParticlesPrefab: {fileID: 0}
   - attackName: Leaf
     minDamage: 20
     maxDamage: 40
     attackDuration: 2
     animationName: Attack
     soundName: LeafAttack
+    particlesPrefab: {fileID: 2353600328335836179, guid: ceec7516237b4104b94300043ca39784,
+      type: 3}
+    hitParticlesPrefab: {fileID: 0}

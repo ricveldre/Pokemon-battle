@@ -15,4 +15,6 @@ public class Attack
     public float attackDuration;
     public string animationName;
     public string soundName;
+    public GameObject particlesPrefab;
+    public GameObject hitParticlesPrefab;
 }
