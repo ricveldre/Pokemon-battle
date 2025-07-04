@@ -12,6 +12,10 @@ public class BattleManager : MonoBehaviour
     [SerializeField]
     private UnityEvent _onBattleStarted;
     [SerializeField]
+    private UnityEvent _onFindPokemon;
+    [SerializeField]
+    private UnityEvent _onNonPokemon;
+    [SerializeField]
     private UnityEvent _onBattleEnded;
     [SerializeField]
     private UnityEvent _onBattleStopped;
@@ -35,6 +39,10 @@ public class BattleManager : MonoBehaviour
         {
             StopBattle();
         }
+        if (_fighters.Count == 0)
+        {
+            _onNonPokemon?.Invoke();
+        }
     }
     public void StopBattle()
     {
@@ -46,6 +54,7 @@ public class BattleManager : MonoBehaviour
     }
     private void InitializeFighters()
     {
+        _onNonPokemon?.Invoke();
         foreach (var fighter in _fighters)
         {
             fighter.InitializeFighter();

@@ -41,11 +41,13 @@ public class FrameText : MonoBehaviour
         _text.text = "";
         if (stopAnimation)
         {
+            SoundManager.instance.Play("FrameIn");
             _animator.Play(_hideTextAnimationName, 0, 0f);
         }
     }
     public void ShowText(string text)
     {
+        SoundManager.instance.Play("FrameOut");
         StopText();
         _animator.Play(_showTextAnimationName, 0, 0f);
         _showTextCoroutine = StartCoroutine(ShowTextCoroutine(text));
