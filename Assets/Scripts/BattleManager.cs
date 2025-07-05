@@ -23,6 +23,7 @@ public class BattleManager : MonoBehaviour
     private DamageTarget _damageTarget = new DamageTarget();
     public void AddFighter(Fighter fighter)
     {
+        _onFindPokemon?.Invoke();
         FrameText.Instance.ShowText(fighter.FighterName + " has joined the battle!");
         _fighters.Add(fighter);
         if (_fighters.Count >= _fightersNeededToStart)
@@ -54,7 +55,6 @@ public class BattleManager : MonoBehaviour
     }
     private void InitializeFighters()
     {
-        _onNonPokemon?.Invoke();
         foreach (var fighter in _fighters)
         {
             fighter.InitializeFighter();
